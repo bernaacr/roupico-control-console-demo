@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Harbour Trade Works Control Console | Concept Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell" data-demo-tabs>
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <img class="brand-logo" src="./logo-header.png" alt="" width="682" height="723" />
+        <span><strong>Roupiço Group</strong> Concept demo</span>
+      </a>
+      <nav class="top-links" aria-label="Demo navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./salon.html">Salon demo</a>
+        <a href="./safety.html">H&amp;S admin demo</a>
+      </nav>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="business-head">
+        <div class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 7 9 2 3 8l5 5"/><path d="m9 13 6 6 6-6-6-6"/><path d="M2 22h20"/></svg>
+        </div>
+        <div>
+          <p class="eyebrow">Trades / service business</p>
+          <h1>Harbour Trade Works Control Console</h1>
+          <p>Example dashboard for quotes, jobs, call-backs, invoices and maintenance follow-ups.</p>
+        </div>
+        <span class="status-pill good">Concept demo</span>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Trades demo screens">
+        <button class="active" type="button" data-tab-target="today" aria-selected="true">Today</button>
+        <button type="button" data-tab-target="jobs" aria-selected="false">Quotes & Jobs</button>
+        <button type="button" data-tab-target="cashflow" aria-selected="false">Cashflow & Follow-ups</button>
+      </div>
+
+      <section class="screen active" data-tab-panel="today">
+        <div class="screen-grid">
+          <article class="panel span-3">
+            <div class="metric"><span>New quote requests</span><strong>5</strong><small>2 need site photos before pricing</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Active jobs</span><strong>8</strong><small>3 on-site today</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Call-backs due</span><strong>4</strong><small>Oldest from Monday</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Invoices to chase</span><strong>3</strong><small>Owner-approved reminders only</small></div>
+          </article>
+
+          <article class="panel span-7">
+            <div class="panel-title"><h2>Site visit schedule</h2><span class="status-pill good">today</span></div>
+            <div class="calendar-strip">
+              <span><strong>08:30</strong><small>Boiler check</small></span>
+              <span class="active"><strong>10:00</strong><small>Kitchen quote</small></span>
+              <span><strong>12:15</strong><small>Parts pickup</small></span>
+              <span><strong>13:30</strong><small>Leak repair</small></span>
+              <span><strong>15:00</strong><small>Call-back block</small></span>
+              <span><strong>16:30</strong><small>Admin review</small></span>
+            </div>
+          </article>
+
+          <aside class="panel span-5 assistant-strip">
+            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
+            <p>Ask two quote requests for clear photos before arranging site visits. This keeps the diary from filling with jobs that may not fit.</p>
+            <div class="draft-box">Draft ready: “Could you send two clear photos and the postcode first? I can then tell you whether a quick quote or visit makes more sense.”</div>
+          </aside>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Materials note</h2></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Pipe fittings</strong><span>Needed before tomorrow morning job.</span></div><span class="status-pill warn">buy</span></div>
+              <div class="lane"><div><strong>Sealant</strong><span>Van stock low after yesterday.</span></div><span class="status-pill">check</span></div>
+              <div class="lane"><div><strong>Invoice photos</strong><span>Attach before sending final note.</span></div><span class="status-pill">admin</span></div>
+            </div>
+          </article>
+
+          <article class="panel span-8">
+            <div class="panel-title"><h2>Today&apos;s job board</h2></div>
+            <div class="workflow-map">
+              <div class="workflow-step"><b>Quote</b><strong>Kitchen tap replacement</strong><span>Photos received, customer wants rough price.</span></div>
+              <div class="workflow-step"><b>Booked</b><strong>Leak repair</strong><span>Access confirmed, parts in van.</span></div>
+              <div class="workflow-step"><b>Waiting</b><strong>Bathroom extractor</strong><span>Customer needs to confirm model choice.</span></div>
+              <div class="workflow-step"><b>Admin</b><strong>Three invoices</strong><span>Reminder drafts ready for review.</span></div>
+            </div>
+          </article>
+
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Nothing slipping through</h2><span class="status-pill warn">catches what gets forgotten</span></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Quote requests with no reply over 48h</strong><span>Customers still waiting to hear back.</span></div><span class="status-pill warn">2 to chase</span></div>
+              <div class="lane"><div><strong>Call-backs overdue</strong><span>Oldest has been waiting since Monday.</span></div><span class="status-pill warn">4</span></div>
+              <div class="lane"><div><strong>Finished jobs not yet invoiced</strong><span>Work done, invoice still sitting in drafts.</span></div><span class="status-pill">2</span></div>
+            </div>
+            <p class="fine">Example queue — shows what the console flags before it costs a job or a payment, not a results claim.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen" data-tab-panel="jobs" hidden>
+        <div class="screen-grid">
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Quote pipeline</h2><span class="status-pill good">example workflow</span></div>
+            <div class="quote-pipeline">
+              <div class="quote-stage">
+                <h3>New</h3>
+                <div class="job-card">Fence repair enquiry</div>
+                <div class="job-card">Small bathroom leak</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Needs info</h3>
+                <div class="job-card">Extractor replacement photos</div>
+                <div class="job-card">Kitchen tap postcode</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Visit booked</h3>
+                <div class="job-card">Rental property inspection</div>
+                <div class="job-card">Gutter repair check</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Sent</h3>
+                <div class="job-card">Garden gate fix</div>
+                <div class="job-card">Utility room pipework</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel span-5">
+            <div class="panel-title"><h2>Job stages</h2></div>
+            <div class="donut" style="--value:58%" data-label="58%"></div>
+            <p class="muted">Example: active jobs with next step confirmed.</p>
+          </article>
+
+          <article class="panel span-7">
+            <div class="panel-title"><h2>Customer update drafts</h2></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Arrival window</strong><span>Send polite time-window note for tomorrow&apos;s first job.</span></div><span class="status-pill warn">review</span></div>
+              <div class="lane"><div><strong>Parts delay</strong><span>Explain delay and offer updated date without overpromising.</span></div><span class="status-pill">draft</span></div>
+              <div class="lane"><div><strong>Quote follow-up</strong><span>Check if the customer wants to go ahead or has questions.</span></div><span class="status-pill good">ready</span></div>
+            </div>
+          </article>
+
+          <aside class="panel span-12 assistant-strip">
+            <div class="panel-title"><h2>Assistant prompt</h2><span class="status-pill warn">owner review</span></div>
+            <p>Suggested quote intake filter: ask for postcode, photos, urgency and whether access/parking is easy before committing to a visit.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen" data-tab-panel="cashflow" hidden>
+        <div class="screen-grid">
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Cash at a glance</h2><span class="status-pill good">example figures</span></div>
+            <div class="cash-figs">
+              <div class="metric"><span>Outstanding to chase</span><strong class="cash">£2,450</strong><small>3 invoices · owner-approved reminders only</small></div>
+              <div class="metric"><span>In open quotes</span><strong class="cash">£7,800</strong><small>Sent, awaiting a customer decision</small></div>
+              <div class="metric"><span>Marked paid this week</span><strong class="cash">£1,900</strong><small>Illustrative, not a results claim</small></div>
+            </div>
+          </article>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Invoice queue</h2></div>
+            <div class="money-row"><span>Reminder draft ready</span><strong>3</strong></div>
+            <div class="money-row"><span>Needs photo attached</span><strong>2</strong></div>
+            <div class="money-row"><span>Marked paid today</span><strong>1</strong></div>
+          </article>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Quote status</h2></div>
+            <div class="chart-bars">
+              <div style="min-height:116px" data-label="New"></div>
+              <div style="min-height:154px" data-label="Info"></div>
+              <div style="min-height:92px" data-label="Visit"></div>
+              <div style="min-height:128px" data-label="Sent"></div>
+              <div style="min-height:70px" data-label="Won"></div>
+            </div>
+          </article>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Maintenance prompts</h2></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Annual service</strong><span>Friendly reminder ready for last year&apos;s customers.</span></div><span class="status-pill">draft</span></div>
+              <div class="lane"><div><strong>Seasonal check</strong><span>Content idea for winter prep.</span></div><span class="status-pill">idea</span></div>
+              <div class="lane"><div><strong>Aftercare note</strong><span>Send care instructions after repair.</span></div><span class="status-pill good">ready</span></div>
+            </div>
+          </article>
+
+          <article class="panel span-6">
+            <div class="panel-title"><h2>Admin checklist</h2></div>
+            <div class="proof-grid">
+              <div class="proof-item"><span class="proof-dot"></span><span>Photos attached to job record</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Invoice note reviewed</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Follow-up date set</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Materials restock checked</span></div>
+            </div>
+          </article>
+
+          <aside class="panel span-6 assistant-strip">
+            <div class="panel-title"><h2>Reminder draft ready</h2><span class="status-pill warn">not sent</span></div>
+            <p>“Hi, just checking whether you had any questions on the quote I sent over. Happy to adjust the scope if needed before booking anything in.”</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Concept demo only. Built to show how a Business Control Console could be adapted for a trades/service business.</footer>
+  </div>
+  <script src="./demo.js" defer></script>
+</body>
+</html>

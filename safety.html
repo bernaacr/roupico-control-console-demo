@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>SafeWork Advisory Control Console | Concept Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="shell" data-demo-tabs>
+    <header class="topbar">
+      <a class="brand" href="./index.html">
+        <img class="brand-logo" src="./logo-header.png" alt="" width="682" height="723" />
+        <span><strong>Roupiço Group</strong> Concept demo</span>
+      </a>
+      <nav class="top-links" aria-label="Demo navigation">
+        <a href="./index.html">Overview</a>
+        <a href="./salon.html">Salon demo</a>
+        <a href="./trades.html">Trades demo</a>
+      </nav>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="business-head">
+        <div class="icon-tile" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3 4 6v6c0 5 3.4 7.7 8 9 4.6-1.3 8-4 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-5"/></svg>
+        </div>
+        <div>
+          <p class="eyebrow">H&amp;S / compliance advisory business</p>
+          <h1>SafeWork Advisory Control Console</h1>
+          <p>Example dashboard for enquiry admin, inspections, training reminders and competent-person review queues.</p>
+        </div>
+        <span class="status-pill good">Concept demo</span>
+      </section>
+
+      <div class="tabs" role="tablist" aria-label="Health and safety demo screens">
+        <button class="active" type="button" data-tab-target="today" aria-selected="true">Today</button>
+        <button type="button" data-tab-target="pipeline" aria-selected="false">Enquiries & Visits</button>
+        <button type="button" data-tab-target="review" aria-selected="false">Review & Reminders</button>
+      </div>
+
+      <section class="screen active" data-tab-panel="today">
+        <div class="screen-grid">
+          <article class="panel span-3">
+            <div class="metric"><span>New enquiries</span><strong>6</strong><small>2 need scope clarification</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Site visits booked</span><strong>4</strong><small>Access notes checked</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Renewals due</span><strong>9</strong><small>Training and retainer reminders</small></div>
+          </article>
+          <article class="panel span-3">
+            <div class="metric"><span>Review queue</span><strong>5</strong><small>Competent person review only</small></div>
+          </article>
+
+          <article class="panel span-8">
+            <div class="panel-title"><h2>Advisory diary</h2><span class="status-pill good">owner view</span></div>
+            <div class="calendar-strip">
+              <span><strong>09:00</strong><small>Retainer call</small></span>
+              <span class="active"><strong>10:30</strong><small>Site inspection</small></span>
+              <span><strong>12:00</strong><small>Training admin</small></span>
+              <span><strong>13:45</strong><small>Client check-in</small></span>
+              <span><strong>15:00</strong><small>Review block</small></span>
+              <span><strong>16:30</strong><small>Enquiry triage</small></span>
+            </div>
+          </article>
+
+          <aside class="panel span-4 assistant-strip">
+            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
+            <p>Send a clarification question before quoting the RAMS enquiry. The console should collect scope, site and activity details, not generate the document.</p>
+            <div class="draft-box">Draft ready: “Before I advise on the right route, could you confirm the site type, work activity, dates and who will be carrying out the work?”</div>
+          </aside>
+
+          <article class="panel span-5">
+            <div class="panel-title"><h2>Admin sources</h2></div>
+            <div class="chart-bars">
+              <div style="min-height:118px" data-label="Email"></div>
+              <div style="min-height:82px" data-label="Phone"></div>
+              <div style="min-height:146px" data-label="Retainers"></div>
+              <div style="min-height:70px" data-label="Training"></div>
+              <div style="min-height:102px" data-label="Web"></div>
+            </div>
+          </article>
+
+          <article class="panel span-7">
+            <div class="panel-title"><h2>Careful queue</h2></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>RAMS enquiry</strong><span>Collect scope and site details for professional review.</span></div><span class="status-pill warn">clarify</span></div>
+              <div class="lane"><div><strong>First-aid training renewal</strong><span>Reminder draft ready for existing client.</span></div><span class="status-pill good">ready</span></div>
+              <div class="lane"><div><strong>Fire assessment follow-up</strong><span>Book review call; no technical advice in the draft.</span></div><span class="status-pill">schedule</span></div>
+            </div>
+          </article>
+
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Renewal deadlines</h2><span class="status-pill warn">soonest first</span></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Working-at-height refresher</strong><span>Retainer client · training admin reminder.</span></div><span class="status-pill warn">6 days</span></div>
+              <div class="lane"><div><strong>First-aid certificate</strong><span>Existing client · renewal reminder ready.</span></div><span class="status-pill warn">12 days</span></div>
+              <div class="lane"><div><strong>Fire risk assessment review</strong><span>Book competent-person review call.</span></div><span class="status-pill">31 days</span></div>
+              <div class="lane"><div><strong>Asbestos awareness renewal</strong><span>Training date request to confirm.</span></div><span class="status-pill">48 days</span></div>
+            </div>
+            <p class="fine">Reminders and dates only — the console flags timing, it does not give regulated advice.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen" data-tab-panel="pipeline" hidden>
+        <div class="screen-grid">
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Enquiry and visit flow</h2><span class="status-pill good">admin support only</span></div>
+            <div class="quote-pipeline">
+              <div class="quote-stage">
+                <h3>New</h3>
+                <div class="job-card">Warehouse inspection enquiry</div>
+                <div class="job-card">Training date request</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Needs scope</h3>
+                <div class="job-card">RAMS support question</div>
+                <div class="job-card">Fire assessment follow-up</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Visit booked</h3>
+                <div class="job-card">Construction site review</div>
+                <div class="job-card">Office inspection</div>
+              </div>
+              <div class="quote-stage">
+                <h3>Review</h3>
+                <div class="job-card">Advisor notes to check</div>
+                <div class="job-card">Client action list</div>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel span-5">
+            <div class="panel-title"><h2>Scope completeness</h2></div>
+            <div class="donut" style="--value:71%" data-label="71%"></div>
+            <p class="muted">Example: enquiries with enough detail for the advisor to assess the next step.</p>
+          </article>
+
+          <article class="panel span-7">
+            <div class="panel-title"><h2>Information needed</h2></div>
+            <div class="proof-grid">
+              <div class="proof-item"><span class="proof-dot"></span><span>Site address and type</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Work activity summary</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Dates and access notes</span></div>
+              <div class="proof-item"><span class="proof-dot"></span><span>Competent reviewer assigned</span></div>
+            </div>
+          </article>
+
+          <aside class="panel span-12 assistant-strip">
+            <div class="panel-title"><h2>Boundary prompt</h2><span class="status-pill warn">important</span></div>
+            <p>This console does not generate RAMS, fire risk assessments, policies or compliance advice. It helps collect admin details, organise queues and prepare items for qualified human review.</p>
+          </aside>
+        </div>
+      </section>
+
+      <section class="screen" data-tab-panel="review" hidden>
+        <div class="screen-grid">
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Review queue</h2></div>
+            <div class="money-row"><span>Advisor review needed</span><strong>5</strong></div>
+            <div class="money-row"><span>Client clarification needed</span><strong>3</strong></div>
+            <div class="money-row"><span>Admin formatting ready</span><strong>4</strong></div>
+          </article>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Reminder mix</h2></div>
+            <div class="chart-bars">
+              <div style="min-height:128px" data-label="Training"></div>
+              <div style="min-height:92px" data-label="Retainer"></div>
+              <div style="min-height:150px" data-label="Inspection"></div>
+              <div style="min-height:66px" data-label="Docs"></div>
+              <div style="min-height:108px" data-label="Calls"></div>
+            </div>
+          </article>
+
+          <article class="panel span-4">
+            <div class="panel-title"><h2>Safe-use checklist</h2></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>No regulated drafting</strong><span>AI does not write compliance documents.</span></div><span class="status-pill good">locked</span></div>
+              <div class="lane"><div><strong>Human review</strong><span>Advisor checks every technical point.</span></div><span class="status-pill good">required</span></div>
+              <div class="lane"><div><strong>Admin only</strong><span>Use for reminders, sorting and formatting.</span></div><span class="status-pill">scope</span></div>
+            </div>
+          </article>
+
+          <article class="panel span-12">
+            <div class="panel-title"><h2>Nothing slipping through</h2><span class="status-pill warn">flags what gets forgotten</span></div>
+            <div class="lane-list">
+              <div class="lane"><div><strong>Enquiries waiting on a reply over 48h</strong><span>Scope question sent, no client response chased.</span></div><span class="status-pill warn">3</span></div>
+              <div class="lane"><div><strong>Renewals with no reminder sent</strong><span>Due date approaching, draft not yet issued.</span></div><span class="status-pill warn">2</span></div>
+              <div class="lane"><div><strong>Items waiting on competent-person review</strong><span>Sitting in the queue longer than usual.</span></div><span class="status-pill">5</span></div>
+            </div>
+            <p class="fine">Example queue — admin tracking only, surfaced for human follow-up, not a results claim.</p>
+          </article>
+
+          <aside class="panel span-12 assistant-strip">
+            <div class="panel-title"><h2>Reminder draft ready</h2><span class="status-pill warn">not sent</span></div>
+            <p>“Just a quick reminder that your training renewal is approaching. If helpful, we can arrange a short call to confirm dates and the right next step.”</p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">Concept demo only. Built to show how a Business Control Console could support a sensitive advisory business without replacing professional judgement.</footer>
+  </div>
+  <script src="./demo.js" defer></script>
+</body>
+</html>
+
