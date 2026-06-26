@@ -104,3 +104,107 @@ if (clientSearch) {
     renderClient(match);
   });
 }
+
+// Real estate demo — listing search (filter the carteira), email preview & send.
+const listingSearch = document.querySelector("[data-listing-search]");
+
+if (listingSearch) {
+  const listings = Array.from(document.querySelectorAll("[data-listing]"));
+  const empty = document.querySelector("[data-listing-empty]");
+  const count = document.querySelector("[data-listing-count]");
+
+  listingSearch.addEventListener("input", () => {
+    const query = listingSearch.value.trim().toLowerCase();
+    let visible = 0;
+
+    listings.forEach((listing) => {
+      const haystack = `${listing.textContent} ${listing.dataset.listingKeywords || ""}`.toLowerCase();
+      const match = haystack.includes(query);
+      listing.hidden = !match;
+      if (match) visible += 1;
+    });
+
+    if (empty) empty.hidden = visible !== 0;
+    if (count) count.textContent = `${visible} ${visible === 1 ? "imóvel" : "imóveis"}`;
+  });
+}
+
+const emailItems = Array.from(document.querySelectorAll("[data-email-pick]"));
+
+if (emailItems.length) {
+  const emailTemplates = [
+    {
+      to: "antonio.almeida@email.pt",
+      subject: "Confirmação da visita — T3 em Cascais (ref. LC-204)",
+      body:
+        "Exmo. Sr. Almeida,\n\nConfirmo a nossa visita de hoje, às 15:00, ao T3 em Cascais (ref. LC-204). A morada é Rua das Flores, 24, e estarei no local cinco minutos antes.\n\nEnvio em anexo a ficha do imóvel, com fotografias e plantas. Caso surja algum imprevisto, agradeço que me informe.\n\nCom os melhores cumprimentos,\nInês Costa — Costa Lima Mediação Imobiliária",
+    },
+    {
+      to: "sofia.pereira@email.pt",
+      subject: "Detalhes do T2 em Oeiras (ref. LC-198)",
+      body:
+        "Exma. Sra. Pereira,\n\nConforme combinado, envio os detalhes do T2 em Oeiras (ref. LC-198): 78 m², 2.º andar com elevador, lugar de garagem e arrecadação. Valor de 295.000 €.\n\nSegue em anexo a ficha completa, com fotografias e planta. Se for do seu agrado, posso agendar uma visita esta semana.\n\nCom os melhores cumprimentos,\nInês Costa — Costa Lima Mediação Imobiliária",
+    },
+    {
+      to: "familia.martins@email.pt",
+      subject: "Seguimento da visita — T1 em Lisboa (ref. LC-187)",
+      body:
+        "Exmos. Senhores Martins,\n\nAgradeço a vossa visita de ontem ao T1 na Estrela (ref. LC-187). Gostaria de saber a vossa impressão e se há alguma questão que possa esclarecer.\n\nCaso pretendam avançar, posso preparar uma simulação de condições. Fico ao vosso inteiro dispor.\n\nCom os melhores cumprimentos,\nInês Costa — Costa Lima Mediação Imobiliária",
+    },
+    {
+      to: "rui.nunes@email.pt",
+      subject: "Proposta recebida — Moradia T4 em Sintra (ref. LC-176)",
+      body:
+        "Exmo. Sr. Nunes,\n\nRecebemos uma proposta para a moradia T4 em Sintra (ref. LC-176) e gostaria de a apresentar pessoalmente, bem como os próximos passos até ao CPCV.\n\nTem disponibilidade para uma reunião amanhã de manhã ou ao início da tarde?\n\nCom os melhores cumprimentos,\nInês Costa — Costa Lima Mediação Imobiliária",
+    },
+  ];
+
+  const emailTo = document.querySelector("[data-email-to]");
+  const emailSubject = document.querySelector("[data-email-subject]");
+  const emailBody = document.querySelector("[data-email-body]");
+  const emailStatus = document.querySelector("[data-email-status]");
+  const emailSent = document.querySelector("[data-email-sent]");
+  const emailSend = document.querySelector("[data-email-send]");
+
+  const resetStatus = () => {
+    if (emailSent) emailSent.hidden = true;
+    if (emailStatus) {
+      emailStatus.textContent = "rascunho";
+      emailStatus.classList.remove("good");
+      emailStatus.classList.add("warn");
+    }
+    if (emailSend) emailSend.textContent = "Enviar email";
+  };
+
+  const renderEmail = (template) => {
+    if (emailTo) emailTo.textContent = template.to;
+    if (emailSubject) emailSubject.textContent = template.subject;
+    if (emailBody) emailBody.textContent = template.body;
+    resetStatus();
+  };
+
+  emailItems.forEach((item) => {
+    item.addEventListener("click", () => {
+      emailItems.forEach((other) => {
+        const active = other === item;
+        other.classList.toggle("active", active);
+        other.setAttribute("aria-selected", String(active));
+      });
+
+      const index = Number(item.dataset.emailPick) || 0;
+      renderEmail(emailTemplates[index] || emailTemplates[0]);
+    });
+  });
+
+  if (emailSend) {
+    emailSend.addEventListener("click", () => {
+      if (emailSent) emailSent.hidden = false;
+      if (emailStatus) {
+        emailStatus.textContent = "enviado";
+        emailStatus.classList.remove("warn");
+        emailStatus.classList.add("good");
+      }
+      emailSend.textContent = "Enviado ✓";
+    });
+  }
+}

@@ -107,6 +107,25 @@ body {
     #090c0e;
 }
 
+.theme-realestate {
+  --demo-bg: rgba(11, 15, 22, 0.9);
+  --demo-surface: #121823;
+  --demo-surface-2: #1a2230;
+  --demo-ink: #eef2f8;
+  --demo-muted: #aeb9cc;
+  --demo-quiet: #7c879b;
+  --demo-line: #303c50;
+  --demo-accent: #6f9bd9;
+  --demo-accent-2: #e0b667;
+  --demo-accent-soft: rgba(111, 155, 217, 0.18);
+  --demo-accent-2-soft: rgba(224, 182, 103, 0.13);
+  --demo-warning: #e0b667;
+  background:
+    linear-gradient(145deg, rgba(111, 155, 217, 0.14), transparent 36%),
+    linear-gradient(235deg, rgba(224, 182, 103, 0.10), transparent 34%),
+    #090c12;
+}
+
 a {
   color: inherit;
 }
@@ -204,6 +223,24 @@ a {
   background: #e1bb3f;
   border-color: #e1bb3f;
   color: #070908;
+}
+
+.top-links a.lang-link {
+  background: transparent;
+  border-color: var(--teal);
+  color: var(--teal);
+  font-weight: 700;
+}
+
+.top-links a.lang-link::before {
+  content: "\1F310\00A0";
+}
+
+.top-links a.lang-link:hover,
+.top-links a.lang-link:focus {
+  background: var(--teal-soft);
+  border-color: var(--teal);
+  color: var(--text);
 }
 
 .hero {
@@ -396,6 +433,16 @@ h1 em,
   --demo-line: #34414a;
   --demo-accent: #7aa8c7;
   --demo-accent-2: #82b99b;
+}
+
+.demo-card-realestate {
+  --demo-surface: #121823;
+  --demo-surface-2: #1a2230;
+  --demo-muted: #aeb9cc;
+  --demo-quiet: #7c879b;
+  --demo-line: #303c50;
+  --demo-accent: #6f9bd9;
+  --demo-accent-2: #e0b667;
 }
 
 .dashboard-preview {
@@ -1100,6 +1147,109 @@ h1 em,
   background: var(--demo-surface-2);
   font-weight: 800;
   text-transform: uppercase;
+}
+
+.portal-link {
+  border: 1px solid var(--demo-line);
+  color: var(--demo-accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 8px 10px;
+  text-decoration: none;
+}
+
+.portal-link:hover,
+.portal-link:focus {
+  border-color: var(--demo-accent);
+  color: var(--demo-ink);
+}
+
+.email-list {
+  display: grid;
+  gap: 10px;
+}
+
+.email-item {
+  background: color-mix(in srgb, var(--demo-surface) 68%, #030505);
+  border: 1px solid var(--demo-line);
+  border-left: 3px solid var(--demo-line);
+  color: var(--demo-ink);
+  cursor: pointer;
+  font: inherit;
+  padding: 12px;
+  text-align: left;
+}
+
+.email-item strong,
+.email-item span {
+  display: block;
+}
+
+.email-item span {
+  color: var(--demo-muted);
+  font-size: 0.82rem;
+  margin-top: 4px;
+}
+
+.email-item.active {
+  border-color: var(--demo-accent);
+  border-left-color: var(--demo-accent-2);
+}
+
+.email-item:hover,
+.email-item:focus {
+  border-color: var(--demo-accent);
+}
+
+.email-compose {
+  display: grid;
+  gap: 0;
+}
+
+.email-meta {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.email-field {
+  align-items: baseline;
+  background: color-mix(in srgb, var(--demo-surface) 68%, #030505);
+  border: 1px solid var(--demo-line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 72px 1fr;
+  padding: 10px 12px;
+}
+
+.email-field span {
+  color: var(--demo-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.email-field strong {
+  color: var(--demo-ink);
+  font-weight: 600;
+}
+
+.email-body {
+  background: var(--demo-surface-2);
+  border: 1px solid var(--demo-line);
+  color: var(--demo-muted);
+  line-height: 1.6;
+  min-height: 150px;
+  padding: 14px;
+  white-space: pre-line;
+}
+
+.email-sent {
+  border: 1px solid rgba(120, 198, 163, 0.6);
+  color: var(--green);
+  margin-top: 12px;
+  padding: 10px 12px;
 }
 
 .footer {
