@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
+<body class="theme-trades">
   <div class="shell" data-demo-tabs>
     <header class="topbar">
       <a class="brand" href="./index.html">
@@ -37,25 +37,35 @@
         <span class="status-pill good">Concept demo</span>
       </section>
 
+      <section class="help-strip" aria-label="What this demo helps with">
+        <div class="help-item"><strong>Reply faster</strong><span>Answer quote requests and call-backs without digging through inboxes.</span></div>
+        <div class="help-item"><strong>Book the work</strong><span>Create site visits, update job notes and chase invoices from one screen.</span></div>
+        <div class="help-item"><strong>Keep control</strong><span>Customer messages and reminders wait for your approval before sending.</span></div>
+      </section>
+
       <div class="tabs" role="tablist" aria-label="Trades demo screens">
-        <button class="active" type="button" data-tab-target="today" aria-selected="true">Today</button>
-        <button type="button" data-tab-target="jobs" aria-selected="false">Quotes & Jobs</button>
-        <button type="button" data-tab-target="cashflow" aria-selected="false">Cashflow & Follow-ups</button>
+        <button class="active" type="button" data-tab-target="today" aria-selected="true">Job Board</button>
+        <button type="button" data-tab-target="jobs" aria-selected="false">Quotes Pipeline</button>
+        <button type="button" data-tab-target="cashflow" aria-selected="false">Money & Chasers</button>
       </div>
 
       <section class="screen active" data-tab-panel="today">
         <div class="screen-grid">
-          <article class="panel span-3">
+          <aside class="panel span-12 assistant-strip action-focus">
+            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
+            <p>Ask two quote requests for clear photos before arranging site visits. This keeps the diary from filling with jobs that may not fit.</p>
+            <div class="draft-box">Draft ready: “Could you send two clear photos and the postcode first? I can then tell you whether a quick quote or visit makes more sense.”</div>
+            <div class="action-row"><button type="button">Send request</button><button type="button">Create site visit</button><button type="button">Add job note</button></div>
+          </aside>
+
+          <article class="panel span-4">
             <div class="metric"><span>New quote requests</span><strong>5</strong><small>2 need site photos before pricing</small></div>
           </article>
-          <article class="panel span-3">
+          <article class="panel span-4">
             <div class="metric"><span>Active jobs</span><strong>8</strong><small>3 on-site today</small></div>
           </article>
-          <article class="panel span-3">
+          <article class="panel span-4">
             <div class="metric"><span>Call-backs due</span><strong>4</strong><small>Oldest from Monday</small></div>
-          </article>
-          <article class="panel span-3">
-            <div class="metric"><span>Invoices to chase</span><strong>3</strong><small>Sent only after you approve</small></div>
           </article>
 
           <article class="panel span-7">
@@ -70,18 +80,12 @@
             </div>
           </article>
 
-          <aside class="panel span-5 assistant-strip">
-            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
-            <p>Ask two quote requests for clear photos before arranging site visits. This keeps the diary from filling with jobs that may not fit.</p>
-            <div class="draft-box">Draft ready: “Could you send two clear photos and the postcode first? I can then tell you whether a quick quote or visit makes more sense.”</div>
-          </aside>
-
           <article class="panel span-4">
-            <div class="panel-title"><h2>Materials note</h2></div>
+            <div class="panel-title"><h2>Things to check</h2></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Pipe fittings</strong><span>Needed before tomorrow morning job.</span></div><span class="status-pill warn">buy</span></div>
-              <div class="lane"><div><strong>Sealant</strong><span>Van stock low after yesterday.</span></div><span class="status-pill">check</span></div>
-              <div class="lane"><div><strong>Invoice photos</strong><span>Attach before sending final note.</span></div><span class="status-pill">admin</span></div>
+              <div class="lane"><div><strong>Pipe fittings</strong><span>Needed before tomorrow morning job.</span></div><div class="lane-actions"><span class="status-pill warn">buy</span><button type="button">Add to list</button></div></div>
+              <div class="lane"><div><strong>Sealant</strong><span>Van stock low after yesterday.</span></div><div class="lane-actions"><span class="status-pill">check</span><button type="button">Mark checked</button></div></div>
+              <div class="lane"><div><strong>Invoice photos</strong><span>Attach before sending final note.</span></div><div class="lane-actions"><span class="status-pill">admin</span><button type="button">Attach photos</button></div></div>
             </div>
           </article>
 
@@ -96,11 +100,11 @@
           </article>
 
           <article class="panel span-12">
-            <div class="panel-title"><h2>Nothing slipping through</h2><span class="status-pill warn">catches what gets forgotten</span></div>
+            <div class="panel-title"><h2>Follow-ups not forgotten</h2><span class="status-pill warn">catches what gets missed</span></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Quote requests with no reply over 48h</strong><span>Customers still waiting to hear back.</span></div><span class="status-pill warn">2 to chase</span></div>
-              <div class="lane"><div><strong>Call-backs overdue</strong><span>Oldest has been waiting since Monday.</span></div><span class="status-pill warn">4</span></div>
-              <div class="lane"><div><strong>Finished jobs not yet invoiced</strong><span>Work done, invoice still sitting in drafts.</span></div><span class="status-pill">2</span></div>
+              <div class="lane"><div><strong>Quote requests with no reply over 48h</strong><span>Customers still waiting to hear back.</span></div><div class="lane-actions"><span class="status-pill warn">2 to chase</span><button type="button">Reply now</button></div></div>
+              <div class="lane"><div><strong>Call-backs overdue</strong><span>Oldest has been waiting since Monday.</span></div><div class="lane-actions"><span class="status-pill warn">4</span><button type="button">Start call block</button></div></div>
+              <div class="lane"><div><strong>Finished jobs not yet invoiced</strong><span>Work done, invoice still sitting in drafts.</span></div><div class="lane-actions"><span class="status-pill">2</span><button type="button">Create invoices</button></div></div>
             </div>
             <p class="fine">Example queue — shows what the console flags before it costs a job or a payment, not a results claim.</p>
           </article>
@@ -114,23 +118,23 @@
             <div class="quote-pipeline">
               <div class="quote-stage">
                 <h3>New</h3>
-                <div class="job-card">Fence repair enquiry</div>
-                <div class="job-card">Small bathroom leak</div>
+                <div class="job-card"><strong>Fence repair enquiry</strong><button type="button">Reply</button></div>
+                <div class="job-card"><strong>Small bathroom leak</strong><button type="button">Ask photos</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Needs info</h3>
-                <div class="job-card">Extractor replacement photos</div>
-                <div class="job-card">Kitchen tap postcode</div>
+                <div class="job-card"><strong>Extractor replacement photos</strong><button type="button">Chase info</button></div>
+                <div class="job-card"><strong>Kitchen tap postcode</strong><button type="button">Send question</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Visit booked</h3>
-                <div class="job-card">Rental property inspection</div>
-                <div class="job-card">Gutter repair check</div>
+                <div class="job-card"><strong>Rental property inspection</strong><button type="button">Open job</button></div>
+                <div class="job-card"><strong>Gutter repair check</strong><button type="button">Confirm visit</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Sent</h3>
-                <div class="job-card">Garden gate fix</div>
-                <div class="job-card">Utility room pipework</div>
+                <div class="job-card"><strong>Garden gate fix</strong><button type="button">Follow up</button></div>
+                <div class="job-card"><strong>Utility room pipework</strong><button type="button">Follow up</button></div>
               </div>
             </div>
           </article>
@@ -142,17 +146,18 @@
           </article>
 
           <article class="panel span-7">
-            <div class="panel-title"><h2>Customer update drafts</h2></div>
+            <div class="panel-title"><h2>Customer messages to check</h2></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Arrival window</strong><span>Send polite time-window note for tomorrow&apos;s first job.</span></div><span class="status-pill warn">review</span></div>
-              <div class="lane"><div><strong>Parts delay</strong><span>Explain delay and offer updated date without overpromising.</span></div><span class="status-pill">draft</span></div>
-              <div class="lane"><div><strong>Quote follow-up</strong><span>Check if the customer wants to go ahead or has questions.</span></div><span class="status-pill good">ready</span></div>
+              <div class="lane"><div><strong>Arrival window</strong><span>Send polite time-window note for tomorrow&apos;s first job.</span></div><div class="lane-actions"><span class="status-pill warn">review</span><button type="button">Send update</button></div></div>
+              <div class="lane"><div><strong>Parts delay</strong><span>Explain delay and offer updated date without overpromising.</span></div><div class="lane-actions"><span class="status-pill">draft</span><button type="button">Send draft</button></div></div>
+              <div class="lane"><div><strong>Quote follow-up</strong><span>Check if the customer wants to go ahead or has questions.</span></div><div class="lane-actions"><span class="status-pill good">ready</span><button type="button">Send chase</button></div></div>
             </div>
           </article>
 
           <aside class="panel span-12 assistant-strip">
-            <div class="panel-title"><h2>Assistant prompt</h2><span class="status-pill warn">your review</span></div>
+            <div class="panel-title"><h2>Draft suggestion</h2><span class="status-pill warn">your review</span></div>
             <p>Suggested quote intake filter: ask for postcode, photos, urgency and whether access/parking is easy before committing to a visit.</p>
+            <div class="action-row"><button type="button">Use filter</button><button type="button">Save template</button></div>
           </aside>
         </div>
       </section>
@@ -169,10 +174,10 @@
           </article>
 
           <article class="panel span-4">
-            <div class="panel-title"><h2>Invoice queue</h2></div>
-            <div class="money-row"><span>Reminder draft ready</span><strong>3</strong></div>
-            <div class="money-row"><span>Needs photo attached</span><strong>2</strong></div>
-            <div class="money-row"><span>Marked paid today</span><strong>1</strong></div>
+            <div class="panel-title"><h2>Invoices waiting</h2></div>
+            <div class="money-row"><span>Reminder draft ready</span><strong>3</strong><button type="button">Send chasers</button></div>
+            <div class="money-row"><span>Needs photo attached</span><strong>2</strong><button type="button">Attach</button></div>
+            <div class="money-row"><span>Marked paid today</span><strong>1</strong><button type="button">View</button></div>
           </article>
 
           <article class="panel span-4">
@@ -187,11 +192,11 @@
           </article>
 
           <article class="panel span-4">
-            <div class="panel-title"><h2>Maintenance prompts</h2></div>
+            <div class="panel-title"><h2>Maintenance reminders</h2></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Annual service</strong><span>Friendly reminder ready for last year&apos;s customers.</span></div><span class="status-pill">draft</span></div>
-              <div class="lane"><div><strong>Seasonal check</strong><span>Content idea for winter prep.</span></div><span class="status-pill">idea</span></div>
-              <div class="lane"><div><strong>Aftercare note</strong><span>Send care instructions after repair.</span></div><span class="status-pill good">ready</span></div>
+              <div class="lane"><div><strong>Annual service</strong><span>Friendly reminder ready for last year&apos;s customers.</span></div><div class="lane-actions"><span class="status-pill">draft</span><button type="button">Send reminder</button></div></div>
+              <div class="lane"><div><strong>Seasonal check</strong><span>Content idea for winter prep.</span></div><div class="lane-actions"><span class="status-pill">idea</span><button type="button">Open idea</button></div></div>
+              <div class="lane"><div><strong>Aftercare note</strong><span>Send care instructions after repair.</span></div><div class="lane-actions"><span class="status-pill good">ready</span><button type="button">Send note</button></div></div>
             </div>
           </article>
 
@@ -208,6 +213,7 @@
           <aside class="panel span-6 assistant-strip">
             <div class="panel-title"><h2>Reminder draft ready</h2><span class="status-pill warn">not sent</span></div>
             <p>“Hi, just checking whether you had any questions on the quote I sent over. Happy to adjust the scope if needed before booking anything in.”</p>
+            <div class="action-row"><button type="button">Send reminder</button><button type="button">Edit first</button></div>
           </aside>
         </div>
       </section>

@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Syne:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./styles.css" />
 </head>
-<body>
+<body class="theme-safety">
   <div class="shell" data-demo-tabs>
     <header class="topbar">
       <a class="brand" href="./index.html">
@@ -37,28 +37,39 @@
         <span class="status-pill good">Concept demo</span>
       </section>
 
+      <section class="help-strip" aria-label="What this demo helps with">
+        <div class="help-item"><strong>Reply faster</strong><span>Sort enquiries, request missing details and prepare admin replies.</span></div>
+        <div class="help-item"><strong>Schedule work</strong><span>Book visits, renewal calls and training reminders from one register.</span></div>
+        <div class="help-item"><strong>Keep control</strong><span>Technical judgement and regulated documents stay with a competent person.</span></div>
+      </section>
+
       <div class="tabs" role="tablist" aria-label="Health and safety demo screens">
-        <button class="active" type="button" data-tab-target="today" aria-selected="true">Today</button>
-        <button type="button" data-tab-target="pipeline" aria-selected="false">Enquiries & Visits</button>
-        <button type="button" data-tab-target="review" aria-selected="false">Review & Reminders</button>
+        <button class="active" type="button" data-tab-target="today" aria-selected="true">Advisory Desk</button>
+        <button type="button" data-tab-target="pipeline" aria-selected="false">Visits & Scope</button>
+        <button type="button" data-tab-target="review" aria-selected="false">Review Register</button>
       </div>
 
       <section class="screen active" data-tab-panel="today">
         <div class="screen-grid">
-          <article class="panel span-3">
+          <aside class="panel span-12 assistant-strip action-focus">
+            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
+            <p>Send a clarification question before quoting the RAMS enquiry. The console should collect scope, site and activity details, not generate the document.</p>
+            <div class="draft-box">Draft ready: “Before I advise on the right route, could you confirm the site type, work activity, dates and who will be carrying out the work?”</div>
+            <div class="action-row"><button type="button">Send question</button><button type="button">Assign reviewer</button><button type="button">Log enquiry</button></div>
+            <p class="fine">Admin support only: the console does not generate RAMS, fire risk assessments, policies or compliance advice, and it does not write compliance documents.</p>
+          </aside>
+
+          <article class="panel span-4">
             <div class="metric"><span>New enquiries</span><strong>6</strong><small>2 need scope clarification</small></div>
           </article>
-          <article class="panel span-3">
+          <article class="panel span-4">
             <div class="metric"><span>Site visits booked</span><strong>4</strong><small>Access notes checked</small></div>
           </article>
-          <article class="panel span-3">
+          <article class="panel span-4">
             <div class="metric"><span>Renewals due</span><strong>9</strong><small>Training and retainer reminders</small></div>
           </article>
-          <article class="panel span-3">
-            <div class="metric"><span>Review queue</span><strong>5</strong><small>Competent person review only</small></div>
-          </article>
 
-          <article class="panel span-8">
+          <article class="panel span-7">
             <div class="panel-title"><h2>Advisory diary</h2><span class="status-pill good">your view</span></div>
             <div class="calendar-strip">
               <span><strong>09:00</strong><small>Retainer call</small></span>
@@ -70,14 +81,8 @@
             </div>
           </article>
 
-          <aside class="panel span-4 assistant-strip">
-            <div class="panel-title"><h2>Suggested next action</h2><span class="status-pill warn">review</span></div>
-            <p>Send a clarification question before quoting the RAMS enquiry. The console should collect scope, site and activity details, not generate the document.</p>
-            <div class="draft-box">Draft ready: “Before I advise on the right route, could you confirm the site type, work activity, dates and who will be carrying out the work?”</div>
-          </aside>
-
           <article class="panel span-5">
-            <div class="panel-title"><h2>Admin sources</h2></div>
+            <div class="panel-title"><h2>Where work came from</h2></div>
             <div class="chart-bars">
               <div style="min-height:118px" data-label="Email"></div>
               <div style="min-height:82px" data-label="Phone"></div>
@@ -88,21 +93,21 @@
           </article>
 
           <article class="panel span-7">
-            <div class="panel-title"><h2>Careful queue</h2></div>
+            <div class="panel-title"><h2>Needs attention</h2></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>RAMS enquiry</strong><span>Collect scope and site details for professional review.</span></div><span class="status-pill warn">clarify</span></div>
-              <div class="lane"><div><strong>First-aid training renewal</strong><span>Reminder draft ready for existing client.</span></div><span class="status-pill good">ready</span></div>
-              <div class="lane"><div><strong>Fire assessment follow-up</strong><span>Book review call; no technical advice in the draft.</span></div><span class="status-pill">schedule</span></div>
+              <div class="lane"><div><strong>RAMS enquiry</strong><span>Collect scope and site details for professional review.</span></div><div class="lane-actions"><span class="status-pill warn">clarify</span><button type="button">Request details</button></div></div>
+              <div class="lane"><div><strong>First-aid training renewal</strong><span>Reminder draft ready for existing client.</span></div><div class="lane-actions"><span class="status-pill good">ready</span><button type="button">Send reminder</button></div></div>
+              <div class="lane"><div><strong>Fire assessment follow-up</strong><span>Book review call; no technical advice in the draft.</span></div><div class="lane-actions"><span class="status-pill">schedule</span><button type="button">Book call</button></div></div>
             </div>
           </article>
 
           <article class="panel span-12">
             <div class="panel-title"><h2>Renewal deadlines</h2><span class="status-pill warn">soonest first</span></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Working-at-height refresher</strong><span>Retainer client · training admin reminder.</span></div><span class="status-pill warn">6 days</span></div>
-              <div class="lane"><div><strong>First-aid certificate</strong><span>Existing client · renewal reminder ready.</span></div><span class="status-pill warn">12 days</span></div>
-              <div class="lane"><div><strong>Fire risk assessment review</strong><span>Book competent-person review call.</span></div><span class="status-pill">31 days</span></div>
-              <div class="lane"><div><strong>Asbestos awareness renewal</strong><span>Training date request to confirm.</span></div><span class="status-pill">48 days</span></div>
+              <div class="lane"><div><strong>Working-at-height refresher</strong><span>Retainer client · training admin reminder.</span></div><div class="lane-actions"><span class="status-pill warn">6 days</span><button type="button">Send reminder</button></div></div>
+              <div class="lane"><div><strong>First-aid certificate</strong><span>Existing client · renewal reminder ready.</span></div><div class="lane-actions"><span class="status-pill warn">12 days</span><button type="button">Send reminder</button></div></div>
+              <div class="lane"><div><strong>Fire risk assessment review</strong><span>Book competent-person review call.</span></div><div class="lane-actions"><span class="status-pill">31 days</span><button type="button">Book review</button></div></div>
+              <div class="lane"><div><strong>Asbestos awareness renewal</strong><span>Training date request to confirm.</span></div><div class="lane-actions"><span class="status-pill">48 days</span><button type="button">Ask dates</button></div></div>
             </div>
             <p class="fine">Reminders and dates only — the console flags timing, it does not give regulated advice.</p>
           </article>
@@ -116,29 +121,29 @@
             <div class="quote-pipeline">
               <div class="quote-stage">
                 <h3>New</h3>
-                <div class="job-card">Warehouse inspection enquiry</div>
-                <div class="job-card">Training date request</div>
+                <div class="job-card"><strong>Warehouse inspection enquiry</strong><button type="button">Log scope</button></div>
+                <div class="job-card"><strong>Training date request</strong><button type="button">Offer dates</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Needs scope</h3>
-                <div class="job-card">RAMS support question</div>
-                <div class="job-card">Fire assessment follow-up</div>
+                <div class="job-card"><strong>RAMS support question</strong><button type="button">Request details</button></div>
+                <div class="job-card"><strong>Fire assessment follow-up</strong><button type="button">Book call</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Visit booked</h3>
-                <div class="job-card">Construction site review</div>
-                <div class="job-card">Office inspection</div>
+                <div class="job-card"><strong>Construction site review</strong><button type="button">Open visit</button></div>
+                <div class="job-card"><strong>Office inspection</strong><button type="button">Confirm access</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Review</h3>
-                <div class="job-card">Advisor notes to check</div>
-                <div class="job-card">Client action list</div>
+                <div class="job-card"><strong>Advisor notes to check</strong><button type="button">Open review</button></div>
+                <div class="job-card"><strong>Client action list</strong><button type="button">Format list</button></div>
               </div>
             </div>
           </article>
 
           <article class="panel span-5">
-            <div class="panel-title"><h2>Scope completeness</h2></div>
+            <div class="panel-title"><h2>Ready for review</h2></div>
             <div class="donut" style="--value:71%" data-label="71%"></div>
             <p class="muted">Example: enquiries with enough detail for the advisor to assess the next step.</p>
           </article>
@@ -154,7 +159,7 @@
           </article>
 
           <aside class="panel span-12 assistant-strip">
-            <div class="panel-title"><h2>Boundary prompt</h2><span class="status-pill warn">important</span></div>
+            <div class="panel-title"><h2>Safety boundary</h2><span class="status-pill warn">important</span></div>
             <p>This console does not generate RAMS, fire risk assessments, policies or compliance advice. It helps collect admin details, organise queues and prepare items for qualified human review.</p>
           </aside>
         </div>
@@ -163,10 +168,10 @@
       <section class="screen" data-tab-panel="review" hidden>
         <div class="screen-grid">
           <article class="panel span-4">
-            <div class="panel-title"><h2>Review queue</h2></div>
-            <div class="money-row"><span>Advisor review needed</span><strong>5</strong></div>
-            <div class="money-row"><span>Client clarification needed</span><strong>3</strong></div>
-            <div class="money-row"><span>Admin formatting ready</span><strong>4</strong></div>
+            <div class="panel-title"><h2>Waiting for your check</h2></div>
+            <div class="money-row"><span>Advisor review needed</span><strong>5</strong><button type="button">Open queue</button></div>
+            <div class="money-row"><span>Client clarification needed</span><strong>3</strong><button type="button">Send questions</button></div>
+            <div class="money-row"><span>Admin formatting ready</span><strong>4</strong><button type="button">Format docs</button></div>
           </article>
 
           <article class="panel span-4">
@@ -183,25 +188,26 @@
           <article class="panel span-4">
             <div class="panel-title"><h2>Safe-use checklist</h2></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>No regulated drafting</strong><span>AI does not write compliance documents.</span></div><span class="status-pill good">locked</span></div>
+              <div class="lane"><div><strong>No regulated drafting</strong><span>The console does not write compliance documents.</span></div><span class="status-pill good">locked</span></div>
               <div class="lane"><div><strong>Human review</strong><span>Advisor checks every technical point.</span></div><span class="status-pill good">required</span></div>
               <div class="lane"><div><strong>Admin only</strong><span>Use for reminders, sorting and formatting.</span></div><span class="status-pill">scope</span></div>
             </div>
           </article>
 
           <article class="panel span-12">
-            <div class="panel-title"><h2>Nothing slipping through</h2><span class="status-pill warn">flags what gets forgotten</span></div>
+            <div class="panel-title"><h2>Follow-ups not forgotten</h2><span class="status-pill warn">flags what gets missed</span></div>
             <div class="lane-list">
-              <div class="lane"><div><strong>Enquiries waiting on a reply over 48h</strong><span>Scope question sent, no client response chased.</span></div><span class="status-pill warn">3</span></div>
-              <div class="lane"><div><strong>Renewals with no reminder sent</strong><span>Due date approaching, draft not yet issued.</span></div><span class="status-pill warn">2</span></div>
-              <div class="lane"><div><strong>Items waiting on competent-person review</strong><span>Sitting in the queue longer than usual.</span></div><span class="status-pill">5</span></div>
+              <div class="lane"><div><strong>Enquiries waiting on a reply over 48h</strong><span>Scope question sent, no client response chased.</span></div><div class="lane-actions"><span class="status-pill warn">3</span><button type="button">Chase replies</button></div></div>
+              <div class="lane"><div><strong>Renewals with no reminder sent</strong><span>Due date approaching, draft not yet issued.</span></div><div class="lane-actions"><span class="status-pill warn">2</span><button type="button">Send reminders</button></div></div>
+              <div class="lane"><div><strong>Items waiting on competent-person review</strong><span>Sitting in the queue longer than usual.</span></div><div class="lane-actions"><span class="status-pill">5</span><button type="button">Assign review</button></div></div>
             </div>
             <p class="fine">Example queue — admin tracking only, surfaced for human follow-up, not a results claim.</p>
           </article>
 
           <aside class="panel span-12 assistant-strip">
-            <div class="panel-title"><h2>Reminder draft ready</h2><span class="status-pill warn">not sent</span></div>
+            <div class="panel-title"><h2>Reminder draft ready for your check</h2><span class="status-pill warn">not sent</span></div>
             <p>“Just a quick reminder that your training renewal is approaching. If helpful, we can arrange a short call to confirm dates and the right next step.”</p>
+            <div class="action-row"><button type="button">Send reminder</button><button type="button">Edit first</button></div>
           </aside>
         </div>
       </section>
