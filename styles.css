@@ -896,6 +896,96 @@ h1 em,
   margin-top: 10px;
 }
 
+.client-search-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.client-search {
+  display: grid;
+  gap: 8px;
+}
+
+.client-search span {
+  color: var(--demo-muted);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.client-search input {
+  background: color-mix(in srgb, var(--demo-surface) 72%, #030505);
+  border: 1px solid var(--demo-line);
+  color: var(--demo-ink);
+  font: 700 1rem var(--body);
+  min-height: 46px;
+  padding: 0 13px;
+  width: 100%;
+}
+
+.client-search input:focus {
+  border-color: var(--demo-accent);
+  outline: 2px solid var(--demo-accent-soft);
+}
+
+.client-profile {
+  align-items: center;
+  background: color-mix(in srgb, var(--demo-surface) 68%, #030505);
+  border: 1px solid var(--demo-line);
+  display: flex;
+  gap: 14px;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.client-profile h3 {
+  color: var(--demo-ink);
+  font-size: 1.35rem;
+  margin: 2px 0;
+}
+
+.client-profile p {
+  color: var(--demo-muted);
+  margin: 0;
+}
+
+.profile-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.note-grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.note-grid div {
+  background: color-mix(in srgb, var(--demo-surface) 68%, #030505);
+  border: 1px solid var(--demo-line);
+  min-height: 118px;
+  padding: 14px;
+}
+
+.note-grid strong,
+.note-grid span {
+  display: block;
+}
+
+.note-grid strong {
+  color: var(--demo-accent-2);
+  font-size: 0.78rem;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.note-grid span {
+  color: var(--demo-muted);
+  font-size: 0.9rem;
+}
+
 .money-row {
   align-items: center;
   border-bottom: 1px solid var(--demo-line);
@@ -936,7 +1026,8 @@ h1 em,
 .lane-actions button,
 .job-card button,
 .money-row button,
-.client-table button {
+.client-table button,
+.profile-actions button {
   background: var(--demo-accent-2);
   border: 1px solid var(--demo-accent-2);
   color: #070908;
@@ -950,7 +1041,8 @@ h1 em,
 .lane-actions button:first-of-type,
 .job-card button,
 .money-row button,
-.client-table button {
+.client-table button,
+.profile-actions button:first-child {
   background: var(--demo-accent);
   border-color: var(--demo-accent);
 }
@@ -964,7 +1056,9 @@ h1 em,
 .money-row button:hover,
 .money-row button:focus,
 .client-table button:hover,
-.client-table button:focus {
+.client-table button:focus,
+.profile-actions button:hover,
+.profile-actions button:focus {
   filter: brightness(1.08);
 }
 
@@ -1066,7 +1160,8 @@ h1 em,
   .quote-pipeline,
   .calendar-strip,
   .help-strip,
-  .client-row {
+  .client-row,
+  .note-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -1093,8 +1188,19 @@ h1 em,
   .cash-figs,
   .help-strip,
   .client-row,
+  .client-profile,
+  .note-grid,
   .money-row {
     grid-template-columns: 1fr;
+  }
+
+  .client-profile {
+    align-items: flex-start;
+    display: grid;
+  }
+
+  .profile-actions {
+    justify-content: flex-start;
   }
 
   .help-item {

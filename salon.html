@@ -122,13 +122,22 @@
 
       <section class="screen" data-tab-panel="clients" hidden>
         <div class="screen-grid">
-          <article class="panel span-12">
-            <div class="panel-title"><h2>Client notes database</h2><span class="status-pill good">sample records</span></div>
-            <div class="client-table" role="table" aria-label="Salon client notes">
-              <div class="client-row client-head" role="row"><span>Client</span><span>Hair notes</span><span>Preferences</span><span>Next action</span></div>
-              <div class="client-row" role="row"><span><strong>Mia R.</strong><small>Colour client</small></span><span>Warm brunette, patch test due before lightening.</span><span>Evening slots, low-maintenance finish.</span><span><button type="button">Book consult</button></span></div>
-              <div class="client-row" role="row"><span><strong>Aisha P.</strong><small>Regular cut</small></span><span>Fine hair, prefers soft layers and no heavy product.</span><span>Saturday mornings, WhatsApp reminders.</span><span><button type="button">Send rebook</button></span></div>
-              <div class="client-row" role="row"><span><strong>Laura C.</strong><small>Bridal enquiry</small></span><span>Trial photos received, allergy note attached.</span><span>Email package details, hold late July.</span><span><button type="button">Reserve date</button></span></div>
+          <article class="panel span-12 client-search-panel">
+            <div class="panel-title"><h2>Find a customer</h2><span class="status-pill good">sample records</span></div>
+            <label class="client-search">
+              <span>Search by name, service or note</span>
+              <input type="search" value="Mia R." placeholder="Try Mia, Aisha, Laura, bridal or patch test" data-client-search />
+            </label>
+            <div class="client-profile" aria-live="polite">
+              <div>
+                <p class="eyebrow">Customer record</p>
+                <h3 data-client-name>Mia R.</h3>
+                <p data-client-type>Colour client</p>
+              </div>
+              <div class="profile-actions">
+                <button type="button" data-client-primary>Reply</button>
+                <button type="button">Add note</button>
+              </div>
             </div>
           </article>
 
@@ -141,20 +150,22 @@
             <p class="fine">Example: overdue clients × average ticket. Illustrative figure, not a results claim.</p>
           </article>
 
-          <article class="panel span-6">
-            <div class="panel-title"><h2>Client notes</h2></div>
-            <div class="lane-list">
-              <div class="lane"><div><strong>Colour consult follow-up</strong><span>Needs patch-test reminder before confirming full appointment.</span></div><div class="lane-actions"><span class="status-pill warn">due</span><button type="button">Send reminder</button></div></div>
-              <div class="lane"><div><strong>Bridal trial enquiry</strong><span>Asked for package details and Saturday availability.</span></div><div class="lane-actions"><span class="status-pill">draft</span><button type="button">Send package</button></div></div>
-              <div class="lane"><div><strong>Regular cut client</strong><span>Usually rebooks every six weeks; gentle reminder ready.</span></div><div class="lane-actions"><span class="status-pill good">ready</span><button type="button">Send rebook</button></div></div>
+          <article class="panel span-8">
+            <div class="panel-title"><h2>Selected customer notes</h2><span class="status-pill warn" data-client-status>reply due</span></div>
+            <div class="note-grid">
+              <div><strong>Service notes</strong><span data-client-notes>Warm brunette, patch test due before lightening.</span></div>
+              <div><strong>Preferences</strong><span data-client-preferences>Evening slots, low-maintenance finish.</span></div>
+              <div><strong>Last message</strong><span data-client-message>Asked whether a consultation is needed before booking balayage.</span></div>
+              <div><strong>Next action</strong><span data-client-action>Reply with the consultation slot and patch-test reminder.</span></div>
             </div>
+            <div class="action-row"><button type="button" data-client-action-button>Reply</button><button type="button">Update record</button></div>
           </article>
 
-          <aside class="panel span-6 assistant-strip">
-            <div class="panel-title"><h2>Draft suggestion</h2><span class="status-pill warn">your review</span></div>
-            <p>Suggested intake question for colour enquiries: “Have you had any colour on your hair in the last 12 months, and can you send a clear photo in daylight?”</p>
-            <div class="draft-box">This keeps the reply useful without pretending to diagnose or guarantee an outcome.</div>
-            <div class="action-row"><button type="button">Use question</button><button type="button">Save to template</button></div>
+          <aside class="panel span-12 assistant-strip">
+            <div class="panel-title"><h2>Customer message ready for approval</h2><span class="status-pill warn">not sent</span></div>
+            <p data-client-reply>Hi Mia, yes, a quick consultation is best before booking balayage so we can check your hair history and patch-test timing. We have space Thursday evening if that suits.</p>
+            <div class="draft-box">The console keeps the reply tied to the customer record, so whoever answers can see the notes first.</div>
+            <div class="action-row"><button type="button">Approve reply</button><button type="button">Edit first</button></div>
           </aside>
         </div>
       </section>
@@ -167,12 +178,12 @@
               <div class="quote-stage">
                 <h3>New enquiry</h3>
                 <div class="job-card"><strong>Ella M.</strong><span>Asked on Instagram about balayage pricing.</span><button type="button">Reply</button></div>
-                <div class="job-card"><strong>Nadia S.</strong><span>WhatsApp message for lash refill availability.</span><button type="button">Offer slot</button></div>
+                <div class="job-card"><strong>Nadia S.</strong><span>WhatsApp message for lash refill availability.</span><button type="button">Reply</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Needs details</h3>
-                <div class="job-card"><strong>Mia R.</strong><span>Needs hair history and daylight photo.</span><button type="button">Ask question</button></div>
-                <div class="job-card"><strong>Chloe B.</strong><span>Patch-test date not confirmed yet.</span><button type="button">Send reminder</button></div>
+                <div class="job-card"><strong>Mia R.</strong><span>Needs hair history and daylight photo.</span><button type="button">Reply</button></div>
+                <div class="job-card"><strong>Chloe B.</strong><span>Patch-test date not confirmed yet.</span><button type="button">Reply</button></div>
               </div>
               <div class="quote-stage">
                 <h3>Ready to book</h3>
