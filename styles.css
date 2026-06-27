@@ -863,14 +863,6 @@ h1 em,
   margin: 0;
 }
 
-.action-focus {
-  min-height: 190px;
-}
-
-.action-focus p {
-  font-size: 1.02rem;
-}
-
 .draft-box {
   background: color-mix(in srgb, var(--demo-surface) 68%, #030505);
   border-left: 3px solid var(--demo-accent-2);
